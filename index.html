@@ -9,58 +9,47 @@
 <body>
     <div class="container">
         <h1>La Coscunera</h1>
-        
-        <!-- Contenedor 0 -->
-        <div class="title-container">
-            <div class="title-wrapper">
+
+        <!-- Contenedor de botones con títulos -->
+        <div class="button-container">
+            <div class="button-wrapper">
+                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" onclick="toggleImage(this, 'Imagenes/PezzutiAlien.png'); document.getElementById('audio1').play();" class="img-button">
                 <div class="title">Pezzuti</div>
             </div>
-            <div class="title-wrapper">
+            <div class="button-wrapper">
+                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" onclick="toggleImage(this, 'Imagenes/PezzutiLeDijoAlien.png'); document.getElementById('audio2').play();" class="img-button">
                 <div class="title">Pezzuti Le Dijo</div>
             </div>
-            <div class="title-wrapper">
+            <div class="button-wrapper">
+                <img src="Imagenes/Na.png" alt="Naaa" onclick="toggleImage(this, 'Imagenes/NaAlien.png'); document.getElementById('audio3').play();" class="img-button">
                 <div class="title">Naaa</div>
             </div>
-            <div class="title-wrapper">
+            <div class="button-wrapper">
+                <img src="Imagenes/Polimardo.png" alt="Polimardo" onclick="toggleImage(this, 'Imagenes/PolimardoAlien.png'); document.getElementById('audio4').play();" class="img-button">
                 <div class="title">Polimardo</div>
             </div>
-            <div class="title-wrapper">
+            <div class="button-wrapper">
+                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" onclick="toggleImage(this, 'Imagenes/BuenardopolisAlien.png'); document.getElementById('audio5').play();" class="img-button">
                 <div class="title">Buenardopolis</div>
             </div>
-            <div class="title-wrapper">
+            <div class="button-wrapper">
+                <img src="Imagenes/Bro.png" alt="Brooooooooo" onclick="toggleImage(this, 'Imagenes/BroAlien.png'); document.getElementById('audio6').play();" class="img-button">
                 <div class="title">Brooooooooo</div>
             </div>
         </div>
 
-        <!-- Contenedor de botones -->
-        <div class="button-container">
-            <div class="button-wrapper">
-                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" onclick="toggleImage(this, 'Imagenes/PezzutiAlien.png'); document.getElementById('audio1').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" onclick="toggleImage(this, 'Imagenes/PezzutiLeDijoAlien.png'); document.getElementById('audio2').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/Na.png" alt="Naaa" onclick="toggleImage(this, 'Imagenes/NaAlien.png'); document.getElementById('audio3').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/Polimardo.png" alt="Polimardo" onclick="toggleImage(this, 'Imagenes/PolimardoAlien.png'); document.getElementById('audio4').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" onclick="toggleImage(this, 'Imagenes/BuenardopolisAlien.png'); document.getElementById('audio5').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/Bro.png" alt="Brooooooooo" onclick="toggleImage(this, 'Imagenes/BroAlien.png'); document.getElementById('audio6').play();" class="img-button">
-            </div>
-        </div>
-
-        <!-- Contenedor 1 -->
+        <!-- Contenedor 1: Seis imágenes de 50x50 -->
         <div class="full-button-container">
             <div class="full-title-wrapper">
                 <div class="title">Full Pezzuti</div>
             </div>
             <div class="full-button-wrapper">
-                <img src="Imagenes/FullPezzuti.png" alt="Full Pezzuti" onclick="document.getElementById('audio7').play();" class="full-img-button">
+                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" data-alien-src="Imagenes/PezzutiAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
+                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" data-alien-src="Imagenes/PezzutiLeDijoAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
+                <img src="Imagenes/Na.png" alt="Naaa" data-alien-src="Imagenes/NaAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
+                <img src="Imagenes/Polimardo.png" alt="Polimardo" data-alien-src="Imagenes/PolimardoAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
+                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" data-alien-src="Imagenes/BuenardopolisAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
+                <img src="Imagenes/Bro.png" alt="Brooooooooo" data-alien-src="Imagenes/BroAlien.png" class="small-img-button" onclick="handleFullPezzutiClick();">
             </div>
         </div>
 
@@ -89,12 +78,27 @@
             const originalSrc = imgElement.getAttribute('data-original-src') || currentSrc;
 
             if (currentSrc === originalSrc) {
-                imgElement.src = alienSrc;
+                imgElement.src = alienSrc || imgElement.getAttribute('data-alien-src');
             } else {
                 imgElement.src = originalSrc;
             }
 
             imgElement.setAttribute('data-original-src', originalSrc);
+        }
+
+        function handleFullPezzutiClick() {
+            const audio = document.getElementById('audio7');
+            audio.play();
+
+            const images = document.querySelectorAll('.full-button-wrapper img');
+            const duration = audio.duration * 1000; // Convert duration to milliseconds
+            const interval = duration / images.length; // Calculate interval
+
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    toggleImage(img, img.getAttribute('data-alien-src'));
+                }, index * interval);
+            });
         }
     </script>
 </body>
