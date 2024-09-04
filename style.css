@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #e0f7fa; /* Color celeste claro para el fondo */
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    padding: 20px;
+    border-radius: 15px; /* Esquinas redondeadas más pronunciadas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra más visible */
+    position: relative; /* Necesario para el posicionamiento del botón de video */
+    z-index: 1; /* Asegura que el contenido esté sobre el video */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #00796b; /* Color celeste oscuro para el texto del título */
+    font-size: 2.5em; /* Tamaño de fuente más grande para el título */
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una fila */
+    justify-content: center;
+    gap: 20px; /* Espaciado entre las imágenes */
+    margin-bottom: 30px; /* Espaciado entre contenedores */
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; /* Transición para la animación de los botones */
+}
+
+.button-wrapper:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el ratón */
+}
+
+.img-button {
+    width: 150px; /* Ancho de 150 píxeles */
+    height: 150px; /* Alto de 150 píxeles */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+    cursor: pointer;
+    border: 2px solid #00796b; /* Borde celeste oscuro */
+    border-radius: 10px; /* Esquinas redondeadas para las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para animaciones */
+}
+
+.img-button:active {
+    transform: scale(0.95); /* Efecto de "presionar" cuando se hace clic */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de clic */
+}
+
+.image-title {
+    margin-bottom: 10px; /* Espacio entre el título y la imagen */
+    font-size: 18px;
+    color: #00796b; /* Color celeste oscuro para el texto del título */
+}
+
+.full-width-button {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+	height: 100%; /* Altura predeterminada */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin-top: 30px; /* Espaciado superior entre contenedores */
+}
+
+.video-container {
+    position: relative; /* Necesario para el posicionamiento del video y el botón */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Altura predeterminada */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    transition: height 0.3s ease; /* Transición suave para el cambio de altura */
+}
+
+#videoIframe {
+    width: 100%; /* Asegura que el video cubra el área del contenedor */
+    height: 100%; /* Asegura que el video cubra el área del contenedor */
+    object-fit: cover; /* Ajusta el contenido del iframe */
+    transition: height 0.3s ease; /* Transición suave para el cambio de altura */
+}
+
+#videoSection:target {
+    height: 315px; /* Altura cuando el video está visible */
+}
+
+#videoSection:target #videoIframe {
+    height: 100%; /* Asegura que el iframe use la altura completa del contenedor */
+}

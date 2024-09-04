@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Coscunera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>La Coscunera</h1>
+        <!-- Contenedor 1 -->
+        <div class="button-container">
+            <div class="button-wrapper">
+                <div class="image-title">Pezzuti</div>
+                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" onclick="playAudio('audio1')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <div class="image-title">Pezzuti Le Dijo</div>
+                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" onclick="playAudio('audio2')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <div class="image-title">Naaa</div>
+                <img src="Imagenes/Na.png" alt="Naaa" onclick="playAudio('audio3')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <div class="image-title">Polimardo</div>
+                <img src="Imagenes/Polimardo.png" alt="Polimardo" onclick="playAudio('audio4')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <div class="image-title">Buenardopolis</div>
+                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" onclick="playAudio('audio5')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <div class="image-title">Brooooooooo</div>
+                <img src="Imagenes/Bro.png" alt="Brooooooooo" onclick="playAudio('audio6')" class="img-button">
+            </div>
+        </div>
+
+        <!-- Contenedor 2 -->
+        <div class="button-container">
+            <div class="button-wrapper">
+                <img src="Imagenes/PezzutiAlien.png" alt="Pezzuti" onclick="playAudio('audio1')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <img src="Imagenes/PezzutiLeDijoAlien.png" alt="Pezzuti Le Dijo" onclick="playAudio('audio2')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <img src="Imagenes/NaAlien.png" alt="Naaa" onclick="playAudio('audio3')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <img src="Imagenes/PolimardoAlien.png" alt="Polimardo" onclick="playAudio('audio4')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <img src="Imagenes/BuenardopolisAlien.png" alt="Buenardopolis" onclick="playAudio('audio5')" class="img-button">
+            </div>
+            <div class="button-wrapper">
+                <img src="Imagenes/BroAlien.png" alt="Brooooooooo" onclick="playAudio('audio6')" class="img-button">
+            </div>
+        </div>
+
+        <!-- Contenedor 3 -->
+        <div class="full-width-button">
+            <div id="videoSection" class="video-container">
+                <iframe id="videoIframe" src="https://www.youtube.com/embed/VdJpycGMSuo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <a href="#videoSection">
+                    <img src="Imagenes/FullPezutti.png" alt="Full Pezzuti" class="full-width-img-button">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Archivos de audio -->
+    <audio id="audio1" src="Audio/Pezzuti.mp3"></audio>
+    <audio id="audio2" src="Audio/Pezzutiledijo.mp3"></audio>
+    <audio id="audio3" src="Audio/Na.mp3"></audio>
+    <audio id="audio4" src="Audio/Polimardo.mp3"></audio>
+    <audio id="audio5" src="Audio/Buenardopolis.mp3"></audio>
+    <audio id="audio6" src="Audio/Bro.mp3"></audio>
+    <audio id="audio7" src="Audio/FullPezutti.mp3"></audio>
+</body>
+</html>
