@@ -5,107 +5,159 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-color: #e0f7fa; /* Color celeste claro para el fondo */
+    background-color: #e0f7fa;
 }
 
 .container {
     text-align: center;
-    background-color: #ffffff; /* Fondo blanco para el contenedor */
-    padding: 20px;
-    border-radius: 20px; /* Esquinas redondeadas más suaves */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más difusa */
-    position: relative; /* Necesario para el posicionamiento del botón de video */
-    z-index: 1; /* Asegura que el contenido esté sobre el video */
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
-    margin-bottom: 20px;
-    color: #004d40; /* Color verde oscuro para el título */
-    font-size: 3em; /* Tamaño de fuente más grande para el título */
+    margin-bottom: 5px;
+    color: #004d40;
+    font-size: 45px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil en el texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
 
 .title-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-	margin-bottom:8px; 
+    margin-bottom: 8px;
 }
 
 .title-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-	width: 150px;
+    width: 150px;
 }
 
 .title {
     font-size: 20px;
-    color: #004d40; /* Color verde oscuro para el texto del título */
+    color: #004d40;
     font-weight: bold;
 }
-
 
 .button-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px; /* Espaciado entre contenedores */
+    margin-bottom: 30px;
 }
 
 .button-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px; /* Asegura que el contenedor de botones tenga el mismo ancho */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    width: 150px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-wrapper:hover {
-    transform: scale(1.05); /* Efecto de aumento sutil al pasar el ratón */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más destacada en hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .img-button {
-    width: 150px; /* Ancho de 150 píxeles */
-    height: 150px; /* Alto de 150 píxeles */
-    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
     cursor: pointer;
-    border: 3px solid #004d40; /* Borde verde oscuro más grueso */
-    border-radius: 15px; /* Esquinas redondeadas para las imágenes */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    border: 3px solid #004d40;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Permite agregar elementos superpuestos */
 }
 
 .img-button:active {
-    transform: scale(0.95); /* Efecto de "presionar" cuando se hace clic */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más sutil en clic */
+    transform: scale(0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.img-button::before {
+    content: url('Imagenes/play-icon.png'); /* Ícono de play */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Tamaño ajustable del ícono */
+    height: 50px; /* Tamaño ajustable del ícono */
+}
+
+.full-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.full-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+.full-img-button {
+    width: 100%;
+    height: auto;
+    border: 3px solid #004d40;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.full-img-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.full-img-button::before {
+    content: url('Imagenes/play-icon.png');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; /* Tamaño del ícono para las imágenes grandes */
+    height: 60px;
+}
+
+.full-title-wrapper {
+    margin-bottom: 10px;
+}
+
+.full-title-wrapper .title {
+    font-size: 24px;
+    color: #004d40;
+    font-weight: bold;
 }
 
 .full-width-button {
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    height: 350px; /* Altura predeterminada */
+    width: 500px;
+    height: 300px;
+    margin: auto;
     display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    margin-top: 30px; /* Espaciado superior entre contenedores */
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .video-container {
-    position: relative; /* Necesario para el posicionamiento del video */
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    border-radius: 15px; /* Esquinas redondeadas para el contenedor de video */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más difusa */
+    width: 100%;
+    height: 100%;
 }
 
-#videoIframe {
-    width: 100%; /* Asegura que el video cubra el área del contenedor */
-    height: 100%; /* Asegura que el video cubra el área del contenedor */
-}
-
-.video-toggle-button {
-    cursor: pointer;
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }

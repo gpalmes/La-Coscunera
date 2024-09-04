@@ -32,56 +32,45 @@
             </div>
         </div>
 
-        <!-- Contenedor 1 -->
+        <!-- Contenedor de botones -->
         <div class="button-container">
             <div class="button-wrapper">
-                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" onclick="document.getElementById('audio1').play();" class="img-button">
+                <img src="Imagenes/Pezzuti.png" alt="Pezzuti" onclick="toggleImage(this, 'Imagenes/PezzutiAlien.png'); document.getElementById('audio1').play();" class="img-button">
             </div>
             <div class="button-wrapper">
-                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" onclick="document.getElementById('audio2').play();" class="img-button">
+                <img src="Imagenes/PezzutiLeDijo.png" alt="Pezzuti Le Dijo" onclick="toggleImage(this, 'Imagenes/PezzutiLeDijoAlien.png'); document.getElementById('audio2').play();" class="img-button">
             </div>
             <div class="button-wrapper">
-                <img src="Imagenes/Na.png" alt="Naaa" onclick="document.getElementById('audio3').play();" class="img-button">
+                <img src="Imagenes/Na.png" alt="Naaa" onclick="toggleImage(this, 'Imagenes/NaAlien.png'); document.getElementById('audio3').play();" class="img-button">
             </div>
             <div class="button-wrapper">
-                <img src="Imagenes/Polimardo.png" alt="Polimardo" onclick="document.getElementById('audio4').play();" class="img-button">
+                <img src="Imagenes/Polimardo.png" alt="Polimardo" onclick="toggleImage(this, 'Imagenes/PolimardoAlien.png'); document.getElementById('audio4').play();" class="img-button">
             </div>
             <div class="button-wrapper">
-                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" onclick="document.getElementById('audio5').play();" class="img-button">
+                <img src="Imagenes/Buenardopolis.png" alt="Buenardopolis" onclick="toggleImage(this, 'Imagenes/BuenardopolisAlien.png'); document.getElementById('audio5').play();" class="img-button">
             </div>
             <div class="button-wrapper">
-                <img src="Imagenes/Bro.png" alt="Brooooooooo" onclick="document.getElementById('audio6').play();" class="img-button">
+                <img src="Imagenes/Bro.png" alt="Brooooooooo" onclick="toggleImage(this, 'Imagenes/BroAlien.png'); document.getElementById('audio6').play();" class="img-button">
+            </div>
+        </div>
+
+        <!-- Contenedor 1 -->
+        <div class="full-button-container">
+            <div class="full-title-wrapper">
+                <div class="title">Full Pezzuti</div>
+            </div>
+            <div class="full-button-wrapper">
+                <img src="Imagenes/FullPezzuti.png" alt="Full Pezzuti" onclick="document.getElementById('audio7').play();" class="full-img-button">
             </div>
         </div>
 
         <!-- Contenedor 2 -->
-        <div class="button-container">
-            <div class="button-wrapper">
-                <img src="Imagenes/PezzutiAlien.png" alt="Pezzuti" onclick="document.getElementById('audio1').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/PezzutiLeDijoAlien.png" alt="Pezzuti Le Dijo" onclick="document.getElementById('audio2').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/NaAlien.png" alt="Naaa" onclick="document.getElementById('audio3').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/PolimardoAlien.png" alt="Polimardo" onclick="document.getElementById('audio4').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/BuenardopolisAlien.png" alt="Buenardopolis" onclick="document.getElementById('audio5').play();" class="img-button">
-            </div>
-            <div class="button-wrapper">
-                <img src="Imagenes/BroAlien.png" alt="Brooooooooo" onclick="document.getElementById('audio6').play();" class="img-button">
-            </div>
-        </div>
-
-        <!-- Contenedor 3 -->
         <div class="full-width-button">
             <div id="videoSection" class="video-container">
                 <iframe id="videoIframe" src="https://www.youtube.com/embed/VdJpycGMSuo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
+       
     </div>
 
     <!-- Archivos de audio -->
@@ -91,6 +80,22 @@
     <audio id="audio4" src="Audio/Polimardo.mp3"></audio>
     <audio id="audio5" src="Audio/Buenardopolis.mp3"></audio>
     <audio id="audio6" src="Audio/Bro.mp3"></audio>
-    <audio id="audio7" src="Audio/FullPezutti.mp3"></audio>
+    <audio id="audio7" src="Audio/FullPezzuti.mp3"></audio>
+
+    <!-- Script para alternar imágenes -->
+    <script>
+        function toggleImage(imgElement, alienSrc) {
+            const currentSrc = imgElement.src;
+            const originalSrc = imgElement.getAttribute('data-original-src') || currentSrc;
+
+            if (currentSrc === originalSrc) {
+                imgElement.src = alienSrc;
+            } else {
+                imgElement.src = originalSrc;
+            }
+
+            imgElement.setAttribute('data-original-src', originalSrc);
+        }
+    </script>
 </body>
 </html>
