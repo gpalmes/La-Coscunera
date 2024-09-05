@@ -1,24 +1,40 @@
+/* Importar fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    background-color: #e0f7fa;
+    padding: 0;
+    background-color: #f5f5f5;  /* Color de fondo más suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
 /* Contenedor principal */
 .container {
     width: 100%;
-    max-width: 1200px;  /* Limitar el ancho máximo */
-    padding: 20px;  /* Padding estándar */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    border-radius: 12px;
     text-align: center;
+    margin-top: 0; /* Eliminar espacio superior */
 }
 
 /* Título principal */
 h1 {
-    font-size: 45px;
-    margin-bottom: 20px;
+    font-size: 36px; /* Tamaño más moderado */
     color: #004d40;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 /* Botones principales */
@@ -27,29 +43,41 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* Espacio inferior mayor */
 }
 
 .button-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 150px;
+    width: 160px; /* Ajustar ancho */
+}
+
+/* Estilo para los títulos */
+.title {
+ font-size: 16px; /* Tamaño de letra adecuado para el título del video */
+    font-weight: 700; /* Peso de fuente más fuerte */
+    color: #004d40; /* Color del texto */
+    margin-bottom: 20px; /* Espacio entre el título y el video */
+	margin-top: 20px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
 }
 
 /* Imágenes principales */
 .img-button {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     cursor: pointer;
-    border: 3px solid #004d40;
-    border-radius: 15px;
+    border: 4px solid #004d40;
+    border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .img-button:active {
     transform: scale(0.95);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Botones pequeños */
@@ -57,22 +85,43 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 12px; /* Ajustar el espacio entre los botones pequeños */
     margin-top: 20px;
 }
 
 .small-img-button {
     width: 50px;
     height: 50px;
-    border: 3px solid #004d40;
-    border-radius: 15px;
+    border: 4px solid #004d40;
+    border-radius: 10px;
+}
+
+/* Contenedor del video */
+.full-width-button {
+    width: 560px; /* Ajustar el ancho del video */
+    margin-top: 40px; /* Espaciado entre el video y el botón superior */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido horizontalmente */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Estilo para el título del video */
+.titleVideo {
+    font-size: 16px; /* Tamaño de letra adecuado para el título del video */
+    font-weight: 700; /* Peso de fuente más fuerte */
+    color: #004d40; /* Color del texto */
+    margin-bottom: 20px; /* Espacio entre el título y el video */
+	margin-top: 20px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
 }
 
 /* Contenedor del video */
 .video-container {
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%;  /* Mantener relación 16:9 */
+    padding-bottom: 56.25%; /* Mantener la relación de aspecto 16:9 */
     position: relative;
 }
 
@@ -87,16 +136,16 @@ h1 {
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
     h1 {
-        font-size: 30px;  /* Reducir el tamaño del título */
+        font-size: 28px; /* Reducir el tamaño del título en móviles */
     }
 
     .button-wrapper {
-        width: 100px;  /* Reducir el tamaño de los botones */
+        width: 120px; /* Reducir el tamaño de los botones */
     }
     
     .img-button {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
     
     .small-img-button {
@@ -105,10 +154,15 @@ h1 {
     }
 
     .full-button-wrapper {
-        gap: 5px;  /* Ajustar el espacio entre los botones pequeños */
+        gap: 8px; /* Ajustar el espacio entre los botones pequeños */
     }
 
     .container {
-        padding: 10px;  /* Reducir el padding en pantallas pequeñas */
+        padding: 15px; /* Reducir el padding en pantallas pequeñas */
+    }
+
+    .full-width-button {
+        width: 100%; /* Asegurar que el video ocupe todo el ancho en móviles */
+        margin-top: 20px; /* Menor margen en móviles */
     }
 }
